@@ -12,4 +12,7 @@ var Clock = (function() {
         minutedisplay.innerHTML = m;
         seconddisplay.innerHTML = s;
     }, 500);
+    setTimeout(function() {
+        responsiveVoice.speak("Hello World");
+    }, 2000);
 })();
