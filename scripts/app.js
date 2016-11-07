@@ -1,18 +1,26 @@
 var Clock = (function() {
     var display = document.getElementById('timedisplay'),
-        hourdisplay = document.getElementById('hour'),
-        minutedisplay = document.getElementById('minute'),
-        seconddisplay = document.getElementById('second');
+        hourDisplay = document.getElementById('hour'),
+        minuteDisplay = document.getElementById('minute'),
+        secondDisplay = document.getElementById('second'),
+        initTime = new Date(),
+        initHour = initTime.getHours(),
+        initMinute = initTime.getMinutes();
+    var checkMinute = function(min) {
+        if (initMinute < min) {
+            console.log('hello new minute', min);
+            responsiveVoice.speak('The time is now ' + initHour + ':' + min);
+            initMinute = min;
+        }
+    };
     var timer = setInterval(function() {
         var time = new Date(),
             s = time.getSeconds(),
             m = time.getMinutes(),
             h = time.getHours();
-        hourdisplay.innerHTML = h;
-        minutedisplay.innerHTML = m;
-        seconddisplay.innerHTML = s;
+        hourDisplay.innerHTML = h;
+        minuteDisplay.innerHTML = m;
+        secondDisplay.innerHTML = s;
+        checkMinute(m);
     }, 500);
-    setTimeout(function() {
-        responsiveVoice.speak("Hello World");
-    }, 2000);
 })();
