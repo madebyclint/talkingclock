@@ -16,23 +16,28 @@ var Clock = (function() {
     };
     var checkAlarm = function(hr, min) {
         if (alarmTriggered) {
-            // checkMinute(min);
+            if (min > 51) {
+                checkMinute(min);
+            }
             console.log('nope', alarmTriggered);
             console.log(hr, min);
         } else {
             console.log('yep', alarmTriggered);
             console.log(hr, min);
-            if (hr === 21 && min === 48) {
+            if (hr === 21 && min === 51) {
                 alarmTriggered = true;
                 responsiveVoice.speak('Good morning. Time to wake up. The time is now ' + initHour + ':' + min);
                 console.log('Good morning');
             }
         }
     };
+    var padTime = function(n) {
+        return n < 10 ? '0' + n : n;
+    };
     var timer = setInterval(function() {
         var time = new Date(),
-            s = time.getSeconds(),
-            m = time.getMinutes(),
+            s = padTime(time.getSeconds()),
+            m = padTime(time.getMinutes()),
             h = time.getHours();
         hourDisplay.innerHTML = h;
         minuteDisplay.innerHTML = m;
