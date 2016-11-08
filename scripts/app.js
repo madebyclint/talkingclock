@@ -6,7 +6,11 @@ var Clock = (function() {
         initTime = new Date(),
         initHour = initTime.getHours(),
         initMinute = initTime.getMinutes(),
-        alarmTriggered = false;
+        alarmTriggered = false,
+        alarm = {
+            hr: 20,
+            min: 56
+        };
     var checkMinute = function(min) {
         if (initMinute < min) {
             console.log('hello new minute', min);
@@ -16,15 +20,15 @@ var Clock = (function() {
     };
     var checkAlarm = function(hr, min) {
         if (alarmTriggered) {
-            if (min > 51) {
+            if (min > alarm.min) {
                 checkMinute(min);
             }
-            console.log('nope', alarmTriggered);
-            console.log(hr, min);
+            // console.log('nope', alarmTriggered);
+            // console.log(hr, min);
         } else {
             console.log('yep', alarmTriggered);
             console.log(hr, min);
-            if (hr === 21 && min === 51) {
+            if (hr === alarm.hr && min === alarm.min) {
                 alarmTriggered = true;
                 responsiveVoice.speak('Good morning. Time to wake up. The time is now ' + initHour + ':' + min);
                 console.log('Good morning');
