@@ -1,3 +1,7 @@
+.day {
+    background: #262626;
+    color: #BE7033;
+}
 .timedisplay {
     font-family: monospace;
     font-size: 20vw;

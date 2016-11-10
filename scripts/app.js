@@ -9,7 +9,7 @@ var Clock = (function() {
         alarmTriggered = false,
         alarm = {
             hr: 21,
-            min: 35
+            min: 40
         },
         i = 0;
     var checkMinute = function(min) {
