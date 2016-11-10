@@ -1,3 +1,6 @@
+body {
+    text-align: center;
+}
 .day {
     background: #262626;
     color: #BE7033;
@@ -7,4 +10,19 @@
     font-size: 20vw;
     margin: auto;
     text-align: center;
+}
+
+/* COMPONENTS */
+.button {
+    display: inline-block;
+    margin: auto;
+    background: #BE7033;
+    color: #fff;
+    padding: 2rem 4rem;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 4.5rem;
+    margin-top: 4rem;
 }
