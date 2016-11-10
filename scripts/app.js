@@ -20,8 +20,8 @@ var Clock = (function() {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     };
     var alarm = {
-            hr: getParameterByName('hr') || 0,
-            min: getParameterByName('min') || 0
+            hr: parseInt(getParameterByName('hr')) || 0,
+            min: parseInt(getParameterByName('min')) || 0
         };
     var checkMinute = function(min) {
         if (initMinute < min) {
