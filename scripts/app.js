@@ -7,11 +7,22 @@ var Clock = (function() {
         initHour = initTime.getHours(),
         initMinute = initTime.getMinutes(),
         alarmTriggered = false,
-        alarm = {
-            hr: 21,
-            min: 40
-        },
         i = 0;
+    var getParameterByName = function(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    };
+    var alarm = {
+            hr: getParameterByName('hr') || 0,
+            min: getParameterByName('min') || 0
+        };
     var checkMinute = function(min) {
         if (initMinute < min) {
             console.log('hello new minute', min);
