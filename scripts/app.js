@@ -8,9 +8,10 @@ var Clock = (function() {
         initMinute = initTime.getMinutes(),
         alarmTriggered = false,
         alarm = {
-            hr: 20,
-            min: 56
-        };
+            hr: 21,
+            min: 35
+        },
+        i = 0;
     var checkMinute = function(min) {
         if (initMinute < min) {
             console.log('hello new minute', min);
@@ -23,11 +24,10 @@ var Clock = (function() {
             if (min > alarm.min) {
                 checkMinute(min);
             }
-            // console.log('nope', alarmTriggered);
-            // console.log(hr, min);
+            console.log('yep', i++);
         } else {
-            console.log('yep', alarmTriggered);
-            console.log(hr, min);
+            // console.log('yep', alarmTriggered);
+            // console.log(hr, min);
             if (hr === alarm.hr && min === alarm.min) {
                 alarmTriggered = true;
                 responsiveVoice.speak('Good morning. Time to wake up. The time is now ' + initHour + ':' + min);
