@@ -17,6 +17,11 @@
 
         <!-- Add your site or application content here -->
         <h1 id="timedisplay" class="timedisplay"><span id="hour" class="timeunit hour">00</span>:<span id="minute" class="timeunit minute">00</span>:<span id="second" class="timeunit second">00</span></h1>
+        <form action="/" method="get">
+            <input type="number" name="hr" placeholder="hr" size="2" min="0" max="23">:
+            <input type="number" name="min" placeholder="min" size="2" min="0" max="59">
+            <input type="submit" value="Set alarm">
+        </form>
         <a href="/" class="button turnoff">Turn Off</a>
 
         <!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
