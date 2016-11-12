@@ -1,0 +1,23 @@
+{
+  "name": "git_talkingsite",
+  "version": "1.0.0",
+  "description": "Talking alarm clock made with react.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madebyclint/talkingclock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madebyclint/talkingclock/issues"
+  },
+  "homepage": "https://github.com/madebyclint/talkingclock",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
