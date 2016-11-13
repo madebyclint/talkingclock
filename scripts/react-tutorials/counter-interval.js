@@ -6,21 +6,6 @@ var ReactDOM = require('react-dom');
 
 var container = document.getElementById('clockcontainer');
 
-// ReactDOM.render(
-//     React.createElement(
-//         'p',
-//         {},
-//         'The time is: ',
-//         React.createElement(
-//             'b',
-//             {},
-//             'Tue Nov 03, 2015 23:37:07 GMT+0000 (GMT)'
-//         )
-//     ),
-//     container
-// )
-
-
 var Counter = React.createClass({
     displayName: 'Counter',
 
