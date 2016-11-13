@@ -20805,37 +20805,83 @@ var container = document.getElementById('clockcontainer');
 // )
 
 
-// create a 'class' or 'custom react element'
+// // create a 'class' or 'custom react element'
+// var Counter = React.createClass({
+//     // the display name is just for debugging purposes, you can ignore it
+//     displayName: 'Counter',
+
+//     // custom element have an internal `this.state` object. You can set its
+//     // initial value here
+//     getInitialState: function () {
+//         return {
+//             count: 0
+//         };
+//     },
+
+//     // this is an event handler. It is called when the button is clicked
+//     _onClick: function () {
+//         this.setState({
+//             count: this.state.count + 1
+//         });
+//     },
+
+//     // the render method is called by react any time something changes,
+//     // it should return the updated structure of the DOM.
+//     render: function () {
+//         return React.createElement(
+//             'button',
+//             // this is where we bind the event handler to the button clicke event
+//             // unlike with attachEventListener, there is no need to remember to
+//             // un-bind the event, and no need to worry about it being addedd multiple
+//             // times
+//             {onClick: this._onClick},
+//             // render the current count as the content of the button
+//             this.state.count
+//         );
+//     }
+// });
+
+// ReactDOM.render(
+//     React.createElement(Counter, {}),
+//     container
+// );
+
+
 var Counter = React.createClass({
-    // the display name is just for debugging purposes, you can ignore it
     displayName: 'Counter',
 
-    // custom element have an internal `this.state` object. You can set its
-    // initial value here
-    getInitialState: function () {
+    getInitialState: function() {
         return {
             count: 0
         };
     },
 
-    // this is an event handler. It is called when the button is clicked
-    _onClick: function () {
-        this.setState({
-            count: this.state.count + 1
-        });
+    // componentDidMount is called when the component has been added to the DOM
+    //
+    // Use it ot initialize anything that's needed for the lifetime of the
+    // element
+    componentDidMount: function () {
+        this._interval = setInterval(function () {
+            // note that because we're calling `this.setState`,
+            // the function must be "bound"
+            this.setState({
+                count: this.state.count + 1
+            });
+        }.bind(this), 1000);
     },
 
-    // the render method is called by react any time something changes,
-    // it should return the updated structure of the DOM.
+    // componentWillMount is called when the component is about to be removed
+    // from the DOM.
+    //
+    // It is importatn to dispose of anything that was created in
+    // `componentDidMount`
+    componentWillMount: function () {
+        clearInterval(this._interval);
+    },
     render: function () {
         return React.createElement(
-            'button',
-            // this is where we bind the event handler to the button clicke event
-            // unlike with attachEventListener, there is no need to remember to
-            // un-bind the event, and no need to worry about it being addedd multiple
-            // times
-            {onClick: this._onClick},
-            // render the current count as the content of the button
+            'p',
+            {},
             this.state.count
         );
     }
