@@ -6,27 +6,14 @@ var ReactDOM = require('react-dom');
 
 var container = document.getElementById('clockcontainer');
 
-// ReactDOM.render(
-//     React.createElement(
-//         'p',
-//         {},
-//         'The time is: ',
-//         React.createElement(
-//             'b',
-//             {},
-//             'Tue Nov 03, 2015 23:37:07 GMT+0000 (GMT)'
-//         )
-//     ),
-//     container
-// )
-
-
-var Counter = React.createClass({
-    displayName: 'Counter',
+var Clock = React.createClass({
+    displayName: 'Clock',
 
     getInitialState: function() {
         return {
-            count: 0
+            hr: 0,
+            min: 0,
+            sec: 0,
         };
     },
 
@@ -39,7 +26,7 @@ var Counter = React.createClass({
             // note that because we're calling `this.setState`,
             // the function must be "bound"
             this.setState({
-                count: this.state.count + 1
+                sec: this.state.sec + 1
             });
         }.bind(this), 1000);
     },
@@ -56,12 +43,16 @@ var Counter = React.createClass({
         return React.createElement(
             'p',
             {},
-            this.state.count
+            this.state.hr,
+            ':',
+            this.state.min,
+            ':',
+            this.state.sec
         );
     }
 });
 
 ReactDOM.render(
-    React.createElement(Counter, {}),
+    React.createElement(Clock, {}),
     container
 );
