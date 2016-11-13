@@ -20783,9 +20783,16 @@ var Clock = React.createClass({
         this._interval = setInterval(function () {
             // note that because we're calling `this.setState`,
             // the function must be "bound"
-            this.setState({
-                sec: this.state.sec < 60 ? this.state.sec + 1 : 0
-            });
+            if (this.state.sec < 60) {
+                this.setState({
+                    sec: this.state.sec + 1
+                });
+            } else {
+                this.setState({
+                    min: this.state.min + 1,
+                    sec: 0
+                });
+            }
         }.bind(this), 1000);
     },
 
