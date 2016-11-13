@@ -20784,7 +20784,7 @@ var Clock = React.createClass({
             // note that because we're calling `this.setState`,
             // the function must be "bound"
             this.setState({
-                sec: this.state.sec + 1
+                sec: this.state.sec < 60 ? this.state.sec + 1 : 0
             });
         }.bind(this), 1000);
     },
