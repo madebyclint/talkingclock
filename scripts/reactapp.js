@@ -30,10 +30,18 @@ var Clock = React.createClass({
                     sec: this.state.sec + 1
                 });
             } else {
-                this.setState({
-                    min: this.state.min + 1,
-                    sec: 0
-                });
+                if (this.state.min < 60) {
+                    this.setState({
+                        min: this.state.min + 1,
+                        sec: 0
+                    });
+                } else {
+                    this.setState({
+                        hr: this.state.hr + 1,
+                        min: 0,
+                        sec: 0
+                    });
+                }
             }
         }.bind(this), 1000);
     },
