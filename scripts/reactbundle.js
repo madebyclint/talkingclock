@@ -20818,7 +20818,7 @@ var Clock = React.createClass({
             {},
             this.state.hr,
             ':',
-            this.state.min,
+            this.state.min < 10 ? '0' + this.state.min.toString() : this.state.min,
             ':',
             this.state.sec
         );
