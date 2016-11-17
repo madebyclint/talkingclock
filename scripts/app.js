@@ -31,6 +31,8 @@ var Clock = (function() {
         }
     };
     var checkAlarm = function(hr, min) {
+        hr = parseInt(hr);
+        min = parseInt(min);
         if (alarmTriggered) {
             if (min > alarm.min) {
                 checkMinute(min);
