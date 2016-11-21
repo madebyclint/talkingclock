@@ -53,7 +53,11 @@ var Clock = (function() {
     };
     var turnoff = function(event) {
         event.preventDefault();
+        // Add a delay of one min to prevent the alarm from immediatley going off again
         window.location.reload();
+        setTimeout(function() {
+            window.location.reload();
+        }, 60000);
     };
     var startClock = function() {
         var time = new Date(),
