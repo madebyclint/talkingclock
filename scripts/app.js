@@ -51,7 +51,8 @@ var Clock = (function() {
     var padTime = function(n) {
         return n < 10 ? '0' + n : n;
     };
-    var turnoff = function(trigger) {
+    var turnoff = function(event) {
+        event.preventDefault();
         window.location.reload();
     };
     var startClock = function() {
@@ -64,7 +65,13 @@ var Clock = (function() {
         secondDisplay.innerHTML = s;
         checkAlarm(h, m);
     };
+    var uibinders = {
+        turnoff: function() {
+            document.getElementById('turn-off').addEventListener('click', turnoff);
+        }
+    };
     var init = (function() {
         var timer = setInterval(startClock, 500);
+        uibinders.turnoff();
     })();
 })();
