@@ -20,9 +20,9 @@ var Clock = (function() {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     };
     var alarm = {
-            hr: parseInt(getParameterByName('hr')) || 0,
-            min: parseInt(getParameterByName('min')) || 0
-        };
+        hr: parseInt(getParameterByName('hr')) || 0,
+        min: parseInt(getParameterByName('min')) || 0
+    };
     var checkMinute = function(min) {
         if (initMinute < min) {
             console.log('hello new minute', min);
@@ -51,7 +51,10 @@ var Clock = (function() {
     var padTime = function(n) {
         return n < 10 ? '0' + n : n;
     };
-    var timer = setInterval(function() {
+    var turnoff = function(trigger) {
+        window.location.reload();
+    };
+    var startClock = function() {
         var time = new Date(),
             s = padTime(time.getSeconds()),
             m = padTime(time.getMinutes()),
@@ -60,5 +63,8 @@ var Clock = (function() {
         minuteDisplay.innerHTML = m;
         secondDisplay.innerHTML = s;
         checkAlarm(h, m);
-    }, 500);
+    };
+    var init = (function() {
+        var timer = setInterval(startClock, 500);
+    })();
 })();
