@@ -6,6 +6,14 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+class App extend React.Component {
+    render () {
+        return <p> Hello React! </p>;
+    }
+}
+
+render(<App/>, document.getElementById('app'));
+
 var container = document.getElementById('clockcontainer');
 
 var Clock = React.createClass({
