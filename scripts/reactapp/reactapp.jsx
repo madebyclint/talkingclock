@@ -1,8 +1,10 @@
 // From https://github.com/ForbesLindesay/tutorials-for-building-real-apps/tree/master/04-react-clock
 
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+// var React = require('react');
+// var ReactDOM = require('react-dom');
+import React from 'react';
+import {render} from 'react-dom';
 
 var container = document.getElementById('clockcontainer');
 
