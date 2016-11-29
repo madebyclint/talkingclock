@@ -6,13 +6,21 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-class App extends React.Component {
+// class App extends React.Component {
+//     render () {
+//         return <p> Hello React! </p>;
+//     }
+// }
+
+// render(<App/>, document.getElementById('clockcontainer'));
+
+class Timer extends React.Component {
     render () {
         return <p> Hello React! </p>;
     }
 }
 
-render(<App/>, document.getElementById('clockcontainer'));
+render(<Timer/>, document.getElementById('clockcontainer'));
 
 // var container = document.getElementById('clockcontainer');
 
