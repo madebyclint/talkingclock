@@ -1,0 +1,76 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/clintbush/.nvm/v0.10.32/bin/node',
+1 verbose cli   '/Users/clintbush/.nvm/v0.10.32/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   'transform-async-to-module-method',
+1 verbose cli   '-S' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'transform-async-to-module-method', null ]
+6 verbose cache add name=undefined spec="transform-async-to-module-method" args=["transform-async-to-module-method",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'transform-async-to-module-method',
+7 verbose parsed url   path: 'transform-async-to-module-method',
+7 verbose parsed url   href: 'transform-async-to-module-method' }
+8 silly lockFile f5d6becd-transform-async-to-module-method transform-async-to-module-method
+9 verbose lock transform-async-to-module-method /Users/clintbush/.npm/f5d6becd-transform-async-to-module-method.lock
+10 silly lockFile f5d6becd-transform-async-to-module-method transform-async-to-module-method
+11 silly lockFile f5d6becd-transform-async-to-module-method transform-async-to-module-method
+12 verbose addNamed [ 'transform-async-to-module-method', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile d1c178a9-transform-async-to-module-method transform-async-to-module-method@
+15 verbose lock transform-async-to-module-method@ /Users/clintbush/.npm/d1c178a9-transform-async-to-module-method.lock
+16 silly addNameRange { name: 'transform-async-to-module-method',
+16 silly addNameRange   range: '*',
+16 silly addNameRange   hasData: false }
+17 verbose request where is /transform-async-to-module-method
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id cbe989a611ad463d
+20 verbose url raw /transform-async-to-module-method
+21 verbose url resolving [ 'https://registry.npmjs.org/',
+21 verbose url resolving   './transform-async-to-module-method' ]
+22 verbose url resolved https://registry.npmjs.org/transform-async-to-module-method
+23 verbose request where is https://registry.npmjs.org/transform-async-to-module-method
+24 info trying registry request attempt 1 at 21:56:36
+25 http GET https://registry.npmjs.org/transform-async-to-module-method
+26 http 404 https://registry.npmjs.org/transform-async-to-module-method
+27 silly registry.get cb [ 404,
+27 silly registry.get   { 'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '2',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Tue, 29 Nov 2016 05:56:36 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-sea1924-SEA',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1480398996.389070,VS0,VE303',
+27 silly registry.get     vary: 'Accept-Encoding' } ]
+28 silly lockFile d1c178a9-transform-async-to-module-method transform-async-to-module-method@
+29 silly lockFile d1c178a9-transform-async-to-module-method transform-async-to-module-method@
+30 error 404 Not Found
+30 error 404
+30 error 404 'transform-async-to-module-method' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404 It was specified as a dependency of 'git_talkingsite'
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Darwin 16.1.0
+32 error command "/Users/clintbush/.nvm/v0.10.32/bin/node" "/Users/clintbush/.nvm/v0.10.32/bin/npm" "i" "transform-async-to-module-method" "-S"
+33 error cwd /Users/clintbush/Projects/TalkingClock/git_talkingsite
+34 error node -v v0.10.32
+35 error npm -v 1.4.28
+36 error code E404
+37 verbose exit [ 1, true ]

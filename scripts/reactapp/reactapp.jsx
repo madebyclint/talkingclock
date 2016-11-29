@@ -15,12 +15,27 @@ import {render} from 'react-dom';
 // render(<App/>, document.getElementById('clockcontainer'));
 
 class Timer extends React.Component {
-    render () {
-        return <p> Hello React! </p>;
+    constuctor(props) {
+        // super throws up
+        // http://madole.xyz/babel-plugin-transform-async-to-module-method-gotcha/
+        // super(props);
+        // workaround:
+        React.Component.prototype.call(this);
+
+        this.state = {
+            hr: 0,
+            min: 0,
+            sec: 0
+        };
+    }
+
+    render() {
+        return (<p> Hello </p>);
     }
 }
 
 render(<Timer/>, document.getElementById('clockcontainer'));
+// export default Timer;
 
 // var container = document.getElementById('clockcontainer');
 
