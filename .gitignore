@@ -1,3 +1,4 @@
 node_modules/
 scripts/reactbundle.js
 scripts/reactbuild/**/*
+npm-debug.log
