@@ -17,10 +17,15 @@ import {render} from 'react-dom';
 class Timer extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            hr: 0,
+            min: 0,
+            sec: 0
+        };
     }
 
     render() {
-        // return (<p> {this.state.hr} </p>);
+        return (<p> {this.state.hr} </p>);
     }
 }
 
