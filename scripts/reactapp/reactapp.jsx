@@ -15,22 +15,12 @@ import {render} from 'react-dom';
 // render(<App/>, document.getElementById('clockcontainer'));
 
 class Timer extends React.Component {
-    constuctor(props) {
-        // super throws up
-        // http://madole.xyz/babel-plugin-transform-async-to-module-method-gotcha/
-        // super(props);
-        // workaround:
-        React.Component.prototype.call(this);
-
-        this.state = {
-            hr: 0,
-            min: 0,
-            sec: 0
-        };
+    constructor(props) {
+        super(props);
     }
 
     render() {
-        return (<p> Hello </p>);
+        // return (<p> {this.state.hr} </p>);
     }
 }
 
