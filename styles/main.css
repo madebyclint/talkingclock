@@ -1,5 +1,5 @@
 /* IMPORTS */
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:100');
+/*@import url('https://fonts.googleapis.com/css?family=Crete+Round');*/
 
 /* UTILITIES */
 .hidden {
@@ -46,9 +46,10 @@ body {
     transition: .8s height;
 }
 .timedisplay {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 100;
-    font-size: 20vw;
+    /*font-family: 'Crete Round', 'Georgia', serif;*/
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 30vw;
     margin: auto;
     text-align: center;
     position: absolute;
