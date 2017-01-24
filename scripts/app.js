@@ -60,18 +60,21 @@ var Clock = (function() {
         }, 60000);
     }
     var startClock = function() {
-        var time = new Date(),
-            s = padTime(time.getSeconds()),
-            m = padTime(time.getMinutes()),
-            h = time.getHours();
+        var now = new Date(),
+            // then = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0),//midnight
+            // diffInMil = (now.getTime() - then.getTime()),// difference in milliseconds
+            ms = now.getMilliseconds(),
+            s = padTime(now.getSeconds()),
+            m = padTime(now.getMinutes()),
+            h = now.getHours();
         hourDisplay.innerHTML = h;
         minuteDisplay.innerHTML = m;
         secondDisplay.innerHTML = s;
-        adjustSecondsProgressBar(s);
         checkAlarm(h, m);
+        adjustSecondsProgressBar(s, ms);
     }
-    var adjustSecondsProgressBar = function(second) {
-        var percentDone = parseInt(second) / 60 * 100;
+    var adjustSecondsProgressBar = function(seconds, milliseconds) {
+var percentDone = (parseInt(seconds) + (milliseconds / 1000)) / 60 * 100;
         document.getElementById('secondsoverlay').style.height = String(percentDone) + '%';
     }
     var uibinders = {
@@ -80,7 +83,11 @@ var Clock = (function() {
         }
     }
     var init = (function() {
-        var timer = setInterval(startClock, 500);
+        // var timer = setInterval(startClock, 500);
+        (function loop() {
+            window.requestAnimationFrame(loop);
+            startClock();
+        })();
         uibinders.turnoff();
     })();
 })();

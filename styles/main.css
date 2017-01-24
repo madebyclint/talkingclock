@@ -43,7 +43,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    transition: .8s height;
+    /*transition: .1s height linear;*/
 }
 .timedisplay {
     /*font-family: 'Crete Round', 'Georgia', serif;*/
