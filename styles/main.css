@@ -1,15 +1,18 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:100');
+
+/* UTILITIES */
+.hidden {
+    display: none !important;
+}
+
 body {
     text-align: center;
+    width: 100%;
 }
 .day {
     background: #262626;
     color: #BE7033;
-}
-.timedisplay {
-    font-family: monospace;
-    font-size: 20vw;
-    margin: auto;
-    text-align: center;
 }
 
 /* COMPONENTS */
@@ -31,4 +34,37 @@ body {
     font-size: 1.5rem;
     border-radius: 5px;
     border: 3px solid #BE7033;
+}
+.seconds-overlay {
+    background: #fff;
+    opacity: .1;
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .8s height;
+}
+.timedisplay {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 100;
+    font-size: 20vw;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.timedisplay .hour::after {
+    content: ':';
+}
+.timedisplay .minute::after {
+    content: ':';
+}
+.timedisplay.hide-seconds .minute::after {
+    content: '';
+}
+.timedisplay.hide-seconds .second {
+    display: none;
 }

@@ -18,18 +18,18 @@ var Clock = (function() {
         if (!results) return null;
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
-    };
+    }
     var alarm = {
         hr: parseInt(getParameterByName('hr')) || 0,
         min: parseInt(getParameterByName('min')) || 0
-    };
+    }
     var checkMinute = function(min) {
         if (initMinute < min) {
             console.log('hello new minute', min);
             responsiveVoice.speak('The time is now ' + initHour + ':' + min);
             initMinute = min;
         }
-    };
+    }
     var checkAlarm = function(hr, min) {
         hr = parseInt(hr);
         min = parseInt(min);
@@ -47,10 +47,10 @@ var Clock = (function() {
                 console.log('Good morning');
             }
         }
-    };
+    }
     var padTime = function(n) {
         return n < 10 ? '0' + n : n;
-    };
+    }
     var turnoff = function(event) {
         event.preventDefault();
         // Add a delay of one min to prevent the alarm from immediatley going off again
@@ -58,7 +58,7 @@ var Clock = (function() {
         setTimeout(function() {
             window.location.reload();
         }, 60000);
-    };
+    }
     var startClock = function() {
         var time = new Date(),
             s = padTime(time.getSeconds()),
@@ -67,13 +67,18 @@ var Clock = (function() {
         hourDisplay.innerHTML = h;
         minuteDisplay.innerHTML = m;
         secondDisplay.innerHTML = s;
+        adjustSecondsProgressBar(s);
         checkAlarm(h, m);
-    };
+    }
+    var adjustSecondsProgressBar = function(second) {
+        var percentDone = parseInt(second) / 60 * 100;
+        document.getElementById('secondsoverlay').style.height = String(percentDone) + '%';
+    }
     var uibinders = {
         turnoff: function() {
             document.getElementById('turn-off').addEventListener('click', turnoff);
         }
-    };
+    }
     var init = (function() {
         var timer = setInterval(startClock, 500);
         uibinders.turnoff();
